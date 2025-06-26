@@ -1,0 +1,8 @@
+<style>
+    body 
+	background-color:red;
+	{ font-family: Arial, sans-serif; padding: 30px; }
+    h2 { color: blue; }
+    .section { border: 8px solid red; padding: 20px; margin-bottom: 20px; border-radius: 10px; background: aqua; }
+	
+  </style>
