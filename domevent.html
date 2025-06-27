@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM & EVENT TASK</title>
+  <style>
+  h3 {
+            background-color: #f0f0f0;
+            padding: 50px;
+            text-align: center;
+			font-size:50px;
+        }
+    body { font-family: Arial; padding: 15px; }
+    input, select { display: block; margin: 10px 0; width: 300px; }
+    #info, #time { margin-top: 10px; background: #eef; padding: 8px; }
+    img { width: 150px; margin: 20px 0; }
+    #text { font-size: 20px; }
+  </style>
+</head>
+<body>
+
+<h3>Basic Info Form</h3>
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<select id="gender">
+  <option value="">Gender</option>
+  <option>Male</option><option>Female</option>
+</select>
+<input id="phone" placeholder="Phone">
+<button onclick="showInfo()">Submit</button>
+<div id="info"></div>
+<div>
+<h3>Image Changer</h3>
+<img id="img" src="image.jpg">
+<br>
+<button onclick="changeImg()">Change Image</button>
+</div>
+<div>
+<h3>Font Size</h3>
+<p id="text">Resize my font</p>
+<button onclick="resize(2)">increase+</button>
+<button onclick="resize(-2)">decrease-</button>
+</div>
+<div>
+<h3>Current Time</h3>
+<p id="time"></p>
+</div>
+<script>
+  function showInfo() {
+    let n = name.value, e = email.value, g = gender.value, p = phone.value;
+    info.innerHTML = `Name: ${n}<br>Email: ${e}<br>Gender: ${g}<br>Phone: ${p}`;
+  }
+
+  let toggle = true;
+  function changeImg() {
+    img.src = toggle ? "image.jpg" : "img.jpg";
+    toggle = !toggle;
+  }
+
+  function resize(step) {
+    let size = parseInt(window.getComputedStyle(text).fontSize);
+    text.style.fontSize = (size + step) + "px";
+  }
+
+  setInterval(() => {
+    time.innerText = new Date().toLocaleString();
+  }, 1000);
+</script>
+
+</body>
+</html>
